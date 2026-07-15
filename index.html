@@ -1,3 +1,54 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Index</title><style>body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:2rem}ul{line-height:1.6}a{color:#0366d6;text-decoration:none}a:hover{text-decoration:underline}</style></head><body><h1>Pages</h1><ul>
-<li><a href="dihdih.html">dihdih.html</a></li>
-</ul></body></html>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Index</title>
+		<style>
+			body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:2rem}
+			ul{line-height:1.6}
+			a{color:#0366d6;text-decoration:none}
+			a:hover{text-decoration:underline}
+		</style>
+	</head>
+	<body>
+		<h1>Pages</h1>
+		<ul id="pages-list">
+			<li>Loading...</li>
+		</ul>
+
+		<script>
+			(async function(){
+				const ul = document.getElementById('pages-list');
+				const owner = 'uzair799';
+				const repo = 'uzair799.github.io';
+				const branch = 'main';
+				const api = `https://api.github.com/repos/${owner}/${repo}/contents/?ref=${branch}`;
+				try {
+					const res = await fetch(api);
+					if (!res.ok) throw new Error('GitHub API error: ' + res.status);
+					const data = await res.json();
+					const htmlFiles = data
+						.filter(item => item.type === 'file' && item.name.endsWith('.html') && item.name !== 'index.html')
+						.sort((a,b) => a.name.localeCompare(b.name));
+					if (htmlFiles.length === 0) {
+						ul.innerHTML = '<li>No HTML files found.</li>';
+						return;
+					}
+					ul.innerHTML = '';
+					for (const f of htmlFiles) {
+						const li = document.createElement('li');
+						const a = document.createElement('a');
+						a.href = f.name;
+						a.textContent = f.name;
+						li.appendChild(a);
+						ul.appendChild(li);
+					}
+				} catch (err) {
+					ul.innerHTML = '<li>Error loading list. See console for details.</li>';
+					console.error(err);
+				}
+			})();
+		</script>
+	</body>
+</html>
