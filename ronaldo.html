@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronaldo > Messi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff4d6d, #ff9f1c, #4cc9f0, #7b2cbf);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(10, 10, 20, 0.9);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.5rem;
+      color: #ffd166;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: center;
+      color: #e5e7eb;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #1f2937, #374151);
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #fbbf24;
+    }
+
+    .card .number {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #ff6b6b;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(90deg, #ff4d6d, #7b2cbf);
+    }
+
+    .btn:hover {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>CR7 is the GOAT</h1>
+    <p>Ronaldo is better than Messi because of insane goals, trophies, fitness, and world-class consistency.</p>
+
+    <div class="stats">
+      <div class="card">
+        <div class="number">900+</div>
+        <h2>Career Goals</h2>
+      </div>
+      <div class="card">
+        <div class="number">5</div>
+        <h2>Ballon d'Or</h2>
+      </div>
+      <div class="card">
+        <div class="number">5</div>
+        <h2>Champions Leagues</h2>
+      </div>
+      <div class="card">
+        <div class="number">100+</div>
+        <h2>Caps for Portugal</h2>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <a class="btn" href="https://www.youtube.com/results?search_query=cristiano+ronaldo+highlights" target="_blank">Watch Highlights</a>
+      <a class="btn" href="https://www.instagram.com/cristiano/" target="_blank">See Ronaldo</a>
